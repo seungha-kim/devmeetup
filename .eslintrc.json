@@ -2,5 +2,10 @@
   "extends": [
     "standard",
     "standard-react"
-  ]
+  ],
+  "rules": {
+    "generator-star-spacing": [2, { "before": false, "after": true }],
+    "space-before-function-paren": [2, "never"],
+    "yield-star-spacing": ["error", {"before": false, "after": true}]
+  }
 }

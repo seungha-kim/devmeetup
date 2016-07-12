@@ -26,11 +26,11 @@ Sequencer.propTypes = {
   stepOff: PropTypes.func.isRequired
 }
 
-function mapStateToProps ({sequencer}) {
+function mapStateToProps({sequencer}) {
   return {sequencer}
 }
 
-function mapDispatchToProps (dispatch) {
+function mapDispatchToProps(dispatch) {
   return bindActionCreators({stepOn, stepOff}, dispatch)
 }
 

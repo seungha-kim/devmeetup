@@ -4,18 +4,14 @@ import {Provider} from 'react-redux'
 
 import store from './store'
 import Sequencer from './containers/Sequencer'
-
-// class MyComponent extends React.Component {
-//   render () {
-//     return (
-//       <div>Hello</div>
-//     )
-//   }
-// }
+import SmartCounter from './containers/SmartCounter'
 
 ReactDOM.render(
   <Provider store={store}>
-    <Sequencer />
+    <div>
+      <Sequencer />
+      <SmartCounter />
+    </div>
   </Provider>,
   document.querySelector('#app')
 )
