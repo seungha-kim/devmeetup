@@ -1,0 +1,18 @@
+.base {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-right: 1px solid lightgray;
+}
+
+.default {
+  background-color: gray;
+}
+
+.activated {
+  background-color: red;
+}
+
+.playing {
+  background-color: yellow;
+}

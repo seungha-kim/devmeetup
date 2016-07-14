@@ -1,4 +1,4 @@
-var path = require('path');
+var path = require('path')
 
 module.exports = {
   entry: path.join(__dirname, 'src', 'app.js'),
@@ -10,10 +10,13 @@ module.exports = {
     loaders: [{
       test: /\.js$/,
       exclude: /node_modules/,
-      loader: 'babel',
+      loader: 'babel'
     }, {
       test: /\.s[ac]ss$/,
-      loaders: ['style', 'css', 'sass']
+      loaders: [
+        'style',
+        'css?modules&importLoaders=1&localIdentName=[path]_[local]_[hash:base64:5]',
+        'sass']
     }]
   }
 }
