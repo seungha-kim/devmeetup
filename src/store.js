@@ -1,31 +1,10 @@
-import {applyMiddleware, createStore, combineReducers} from 'redux'
+import {applyMiddleware, createStore} from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import createLogger from 'redux-logger'
 import Tone from 'tone'
 
-import {
-  sequencer,
-  count,
-  transport
-} from './reducers'
-
-import {
-  count as countSaga,
-  transport as transportSaga
-} from './sagas'
-
-const rootReducer = combineReducers({
-  sequencer,
-  count,
-  transport
-})
-
-function* rootSaga() {
-  yield [
-    countSaga(),
-    transportSaga(Tone)
-  ]
-}
+import rootReducer from './reducers'
+import rootSaga from './sagas'
 
 const logger = createLogger()
 const sagaMiddleware = createSagaMiddleware()
@@ -36,6 +15,6 @@ const store = createStore(
     logger
   )
 )
-sagaMiddleware.run(rootSaga)
+sagaMiddleware.run(rootSaga, Tone)
 
 export default store

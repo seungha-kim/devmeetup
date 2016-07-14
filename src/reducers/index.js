@@ -1,3 +1,11 @@
-export {default as sequencer} from './sequencer'
-export {default as count} from './count'
-export {default as transport} from './transport'
+import {combineReducers} from 'redux'
+
+import count from './count'
+import sequencer from './sequencer'
+import transport from './transport'
+
+export default combineReducers({
+  sequencer,
+  count,
+  transport
+})
