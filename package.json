@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --inline --hot --content-base src/",
+    "dev": "webpack-dev-server --config webpack/common.js --inline --hot --content-base src/",
     "test": "tape --require ./tape-preload src/**/*.spec.js | tap-notify | tap-spec",
     "test:watch": "nodemon --watch ./src --ext js --exec \"npm test\"",
     "test:coverage": "isparta cover ./node_modules/tape/bin/tape -- --require ./tape-preload src/**/*.spec.js"
@@ -18,6 +18,7 @@
     "babel-preset-react": "^6.11.1",
     "classnames": "^2.2.5",
     "css-loader": "^0.23.1",
+    "firebase": "^3.2.0",
     "immutable": "^3.8.1",
     "node-sass": "^3.8.0",
     "react": "^15.2.1",
@@ -29,10 +30,12 @@
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",
     "tone": "^0.7.1",
-    "webpack": "^1.13.1"
+    "webpack": "^1.13.1",
+    "webpack-merge": "^0.14.0"
   },
   "devDependencies": {
     "babel-register": "^6.9.0",
+    "dotenv": "^2.0.0",
     "enzyme": "^2.4.1",
     "eslint": "^3.0.1",
     "eslint-config-standard": "^5.3.1",
@@ -40,6 +43,7 @@
     "eslint-plugin-promise": "^1.3.2",
     "eslint-plugin-react": "^5.2.2",
     "eslint-plugin-standard": "^1.3.2",
+    "firebase-tools": "^3.0.4",
     "ignore-styles": "^4.0.0",
     "isparta": "^4.0.0",
     "istanbul": "^0.4.4",
