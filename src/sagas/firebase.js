@@ -13,7 +13,6 @@ function* signIn(auth, provider) {
   while (true) {
     yield take(AUTH_SIGN_IN_TRY)
     const result = yield call([auth, auth.signInWithPopup], provider)
-    console.log(result)
     yield put(authSignInSuccess(result.user))
   }
 }
@@ -26,9 +25,13 @@ function* signOut(auth) {
   }
 }
 
-export default function* (auth, googleAuthProvider) {
+export default function* ({
+  firebaseApp: app,
+  googleAuthProvider: provider
+}) {
+  const auth = yield call([app, app.auth])
   yield [
-    call(signIn, auth, googleAuthProvider),
+    call(signIn, auth, provider),
     call(signOut, auth)
   ]
 }

@@ -10,8 +10,8 @@ import {
 const Auth = ({currentUser, message, authSignInTry, authSignOutTry}) => (
   <div>
     {currentUser
-      ? <button onClick={authSignOutTry}>Sign out</button>
-      : <button onClick={authSignInTry}>Sign In</button>}
+      ? <button onClick={() => authSignOutTry()}>Sign out</button>
+      : <button onClick={() => authSignInTry()}>Sign In</button>}
     <div>{message}</div>
     {currentUser ? (
       <div>
@@ -25,7 +25,7 @@ const Auth = ({currentUser, message, authSignInTry, authSignOutTry}) => (
 
 Auth.propTypes = {
   // states
-  currentUser: PropTypes.object.isRequired,
+  currentUser: PropTypes.object,
   message: PropTypes.string.isRequired,
   // action creators
   authSignInTry: PropTypes.func.isRequired,

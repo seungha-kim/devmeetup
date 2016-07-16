@@ -6,11 +6,10 @@ import firebase from './firebase'
 export default function* rootSaga({
   Tone,
   firebaseApp,
-  firebaseAuth,
   googleAuthProvider
 }) {
   yield [
     call(transport, Tone),
-    call(firebase, firebaseAuth, googleAuthProvider)
+    call(firebase, {firebaseApp, googleAuthProvider})
   ]
 }

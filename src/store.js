@@ -13,7 +13,6 @@ const firebaseApp = firebase.initializeApp({
   storageBucket: process.env.FIREBASE_STORAGE_BUCKET
 })
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider()
-const firebaseAuth = firebase.auth()
 
 const sagaMiddleware = createSagaMiddleware()
 const store = createStore(
@@ -28,7 +27,6 @@ const store = createStore(
 sagaMiddleware.run(rootSaga, {
   Tone,
   firebaseApp,
-  firebaseAuth,
   googleAuthProvider
 })
 
