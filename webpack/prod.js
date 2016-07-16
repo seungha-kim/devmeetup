@@ -6,6 +6,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const common = require('./common')
 
 module.exports = merge.smart(common, {
+  entry: ['./app.js'],
   module: {
     loaders: [{
       test: /\.s[ac]ss$/,

@@ -6,10 +6,12 @@ import {Provider} from 'react-redux'
 
 import store from './store'
 import Sequencer from './containers/Sequencer'
+import Auth from './containers/Auth'
 
 ReactDOM.render(
   <Provider store={store}>
     <div>
+      <Auth />
       <Sequencer />
     </div>
   </Provider>,
