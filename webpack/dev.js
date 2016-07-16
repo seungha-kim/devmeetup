@@ -16,7 +16,7 @@ module.exports = merge.smart(common, {
       test: /\.s[ac]ss$/,
       loaders: [
         'style',
-        'css?modules&importLoaders=1&localIdentName=[path]_[local]_[hash:base64:5]',
+        'css?modules&importLoaders=1&localIdentName=[path][name][local]',
         'sass']
     }]
   },

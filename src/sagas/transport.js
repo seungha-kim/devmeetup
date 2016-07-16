@@ -12,7 +12,7 @@ import {transportNextPosition} from '../actions/transport'
 
 function* interval() {
   while (true) {
-    yield delay(125)
+    yield delay(1250000000)
     yield put(transportNextPosition())
   }
 }

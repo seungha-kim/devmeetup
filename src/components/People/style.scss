@@ -1,0 +1,49 @@
+$photo-size: 30px;
+
+@mixin hidden {
+  height: 0;
+  opacity: 0;
+  margin: 0;
+}
+
+@mixin visible {
+  height: $photo-size;
+  opacity: 1;
+  margin: 5px 0;
+}
+
+.person {
+  display: flex;
+  @include visible;
+}
+
+.personImage {
+  display: block;
+  width: $photo-size;
+  height: $photo-size;
+  border-radius: $photo-size / 2;
+}
+
+.personName {
+  font-size: 12px;
+  margin-left: 5px;
+  line-height: $photo-size;
+}
+
+.personEnter {
+  @include hidden;
+  transition: all .2s;
+}
+
+.personEnterActive {
+  @include visible;
+}
+
+.personLeave {
+  @include visible;
+  transition: all .2s;
+}
+
+.personLeaveActive {
+  @include hidden;
+}

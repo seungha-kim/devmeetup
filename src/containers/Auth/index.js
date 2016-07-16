@@ -6,8 +6,9 @@ import {
   authSignInTry,
   authSignOutTry
 } from '../../actions/auth'
+import People from '../../components/People'
 
-const Auth = ({currentUser, message, authSignInTry, authSignOutTry}) => (
+const Auth = ({currentUser, message, people, authSignInTry, authSignOutTry}) => (
   <div>
     {currentUser
       ? <button onClick={() => authSignOutTry()}>Sign out</button>
@@ -17,9 +18,11 @@ const Auth = ({currentUser, message, authSignInTry, authSignOutTry}) => (
       <div>
         <div>{currentUser.displayName}</div>
         <div>{currentUser.email}</div>
+        <div>{currentUser.uid}</div>
         <img src={currentUser.photoURL} />
       </div>
     ) : null}
+    <People people={people} />
   </div>
 )
 
@@ -27,13 +30,14 @@ Auth.propTypes = {
   // states
   currentUser: PropTypes.object,
   message: PropTypes.string.isRequired,
+  people: PropTypes.array.isRequired,
   // action creators
   authSignInTry: PropTypes.func.isRequired,
   authSignOutTry: PropTypes.func.isRequired
 }
 
-function mapStateToProps({auth: {currentUser, message}}) {
-  return {currentUser, message}
+function mapStateToProps({auth: {currentUser, message}, people}) {
+  return {currentUser, message, people}
 }
 
 function mapDispatchToProps(dispatch) {
