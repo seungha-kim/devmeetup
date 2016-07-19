@@ -8,23 +8,23 @@ import {
 } from '../types'
 
 export default handleActions({
-  [AUTH_SIGN_IN_TRY]: (state, action) => ({
-    currentUser: null,
-    message: 'Signing in...'
+  [AUTH_SIGN_IN_TRY]: (state) => ({
+    ...state,
+    freezing: true
   }),
   [AUTH_SIGN_IN_SUCCESS]: (state, {payload: currentUser}) => ({
     currentUser,
-    message: 'Signed in!'
+    freezing: false
   }),
-  [AUTH_SIGN_OUT_TRY]: (state, action) => ({
+  [AUTH_SIGN_OUT_TRY]: (state) => ({
     ...state,
-    message: 'Signing out...'
+    freezing: true
   }),
-  [AUTH_SIGN_OUT_SUCCESS]: (state, action) => ({
-    currentUser: null,
-    message: 'Signed out!'
+  [AUTH_SIGN_OUT_SUCCESS]: (state) => ({
+    freezing: false,
+    currentUser: null
   })
 }, {
   currentUser: null,
-  message: 'No auth'
+  freezing: false
 })

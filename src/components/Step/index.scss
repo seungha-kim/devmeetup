@@ -1,18 +1,24 @@
 .base {
   display: inline-block;
+  box-sizing: border-box;
   width: 20px;
   height: 20px;
-  border-right: 1px solid lightgray;
+  border: 1px solid #ccc;
+  margin: 2px 1px;
 }
 
 .default {
-  background-color: gray;
+  background-color: #eee;
 }
 
 .activated {
-  background-color: red;
+  background-color: #39D579;
 }
 
 .playing {
-  background-color: yellow;
+  border-color: #cc00ff;
+}
+
+.pending {
+  background-color: #7fb;
 }

@@ -5,15 +5,11 @@ import ReactDOM from 'react-dom'
 import {Provider} from 'react-redux'
 
 import store from './store'
-import Sequencer from './containers/Sequencer'
-import Auth from './containers/Auth'
+import Layout from './containers/Layout'
 
 ReactDOM.render(
   <Provider store={store}>
-    <div>
-      <Auth />
-      <Sequencer />
-    </div>
+    <Layout />
   </Provider>,
   document.querySelector('#app')
 )

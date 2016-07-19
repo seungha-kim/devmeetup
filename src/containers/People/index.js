@@ -1,4 +1,5 @@
 import React, {PropTypes} from 'react'
+import {connect} from 'react-redux'
 
 import styles from './style.scss'
 import TransitionGroup from 'react-addons-css-transition-group'
@@ -35,4 +36,8 @@ People.propTypes = {
   people: PropTypes.array.isRequired
 }
 
-export default People
+function mapStateToProps({people}) {
+  return {people}
+}
+
+export default connect(mapStateToProps)(People)
