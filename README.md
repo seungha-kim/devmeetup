@@ -50,3 +50,7 @@
 # References
 
 - http://martinfowler.com/articles/serverless.html
+- https://firebase.google.com/docs/
+- https://github.com/reactjs/redux
+- https://github.com/yelouafi/redux-saga
+- https://github.com/Tonejs/Tone.js
